@@ -1,0 +1,133 @@
+//Avalanche Transmitter Clafer MOO
+//Team Avalance PSU Capstone 2024
+
+//Many component values below placeholders to be updated
+
+abstract Component
+	cost -> integer //dollar * 10
+	avail -> integer    //1-10 higher more available
+	rely -> integer     //1-10 higher more reliable
+	implement ->integer //1-10 higher easier to implement
+
+abstract BatteryComponent : Component
+	size -> integer
+	weight -> integer
+	watthours ->integer
+
+//abstract Enclosure : Component
+
+abstract Transmitter
+	hardware
+		xor DesignType
+			Team_Designed_PCB
+				xor Freq_Gen
+					LC : Component
+						[cost = 5 ]     //0.50
+						[avail = 10 ]
+						[rely = 4 ]
+						[implement = 4 ]
+					XO : Component
+						[cost = 40 ]    //4.0
+						[avail = 2 ]
+						[rely = 9 ]
+						[implement = 8 ]
+					VCXO : Component
+						[cost = 23 ]    //2.32
+						[avail = 8 ]
+						[rely = 8 ]
+						[implement = 7 ]
+
+				xor LED Driver
+					MCU : Component
+						[cost = 15]		//1.50
+						[avail = 8 ]    
+						[rely = 8 ]
+						[implement = 6 ]    
+					DotDisplayDriver : Component
+						[cost = 5]		//temp needs to be updated
+						[avail = 8 ]    
+						[rely = 8 ]
+						[implement = 8 ]
+
+				xor Batteries		
+					StandardCell : BatteryComponent
+						[size = 8 ]
+						[weight = 15 ]
+						[cost = 2 ]
+						[watthours = 5 ]
+						[avail = 9 ]
+						[rely = 8 ]
+						[implement = 10]
+					RechargeStandardCell : BatteryComponent
+						[size = 8 ]
+						[weight = 28 ]
+						[cost = 4 ]
+						[watthours = 3 ]
+						[avail = 9 ]
+						[rely = 6 ]
+						[implement = 10 ]
+					BatteryPack : BatteryComponent
+						[size = 108 ]
+						[weight = 120 ]  //172
+						[cost = 93 ]
+						[watthours = 30 ]
+						[avail = 7 ]
+						[rely = 6 ]
+						[implement = 4 ]
+						
+			COTS_PCBs_Breakouts
+				xor Freq_Gen
+					Si5351_Adafruit : Component
+						[cost = 80]
+						[avail = 8 ]
+						[rely = 8 ]
+						[implement = 8 ]
+					AD9833DDS: Component
+						[cost = 49]
+						[avail = 8 ]
+						[rely = 8 ]
+						[implement = 8 ]
+
+				xor SBMCU		//Single Board MCU
+					AdafruitProTrinket : Component
+						[cost = 100]
+						[avail = 8 ]
+						[rely = 8 ]
+						[implement = 9 ]
+					AdafruitTrinket : Component
+						[cost = 70]
+						[avail = 8 ]
+						[rely = 8 ]
+						[implement = 4 ]
+					RaspPiPico : Component
+						[cost = 40]
+						[avail = 2]
+						[rely = 8 ]
+						[implement = 7 ]
+				//xor Batteries // Can we just call the same component, or declare elsewhere?
+
+	//enclosure
+		//COTS IP65 enclosure
+			// xor types of COTS enclosures here
+				//component attributes here
+			//types of COTS
+		//3d printed
+			//3d printed enclosure
+				//components attributes here
+
+	total_cost -> integer = sum Component.cost
+	total_avail -> integer = sum Component.avail
+	total_rely -> integer = sum Component.rely
+	total_implement -> integer = sum Component.implement
+	total_size -> integer = sum BatteryComponent.size
+	total_weight -> integer = sum BatteryComponent.weight
+	total_watthours -> integer = sum BatteryComponent.watthours
+
+aTransmitter : Transmitter
+<< min aTransmitter.total_cost >>
+<< max aTransmitter.total_avail >>
+<< max aTransmitter.total_rely >>
+<< max aTransmitter.total_implement>>
+<< min aTransmitter.total_size >>
+<< min aTransmitter.total_weight >>
+<< min aTransmitter.total_watthours >>
