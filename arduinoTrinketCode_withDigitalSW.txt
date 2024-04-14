@@ -1,0 +1,37 @@
+#include <Wire.h>
+#include <Adafruit_SI5351.h>
+
+Adafruit_SI5351 clockgen = Adafruit_SI5351();
+
+const int outputGatePin = 1;  // Pin connected to the gate of the transistor or switch
+
+// Desired on and off times in milliseconds
+unsigned long desiredOnTime = 140;
+unsigned long desiredOffTime = 800;
+
+void setup() {
+  pinMode(outputGatePin, OUTPUT);
+  digitalWrite(outputGatePin, LOW);  // Start with the gate closed (signal off)
+
+  Serial.begin(9600);
+  Wire.begin();  // Start I2C
+
+  if (!clockgen.begin()) {
+    Serial.println("Si5351 not found");
+    while (1);
+  }
+
+  // Configure the Si5351 to generate a 457 kHz signal
+  clockgen.setupPLL(SI5351_PLL_A, 36);
+  clockgen.setupMultisynth(0, SI5351_PLL_A, 1313, 354, 1000);
+  clockgen.outputEnable(0, true);
+}
+
+void loop() {
+  digitalWrite(outputGatePin, HIGH);  // Turn on the gate
+  delay(desiredOnTime);
+
+  digitalWrite(outputGatePin, LOW);  // Turn off the gate
+  delay(desiredOffTime); 
+
+}
