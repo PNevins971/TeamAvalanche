@@ -1,0 +1,44 @@
+volatile unsigned long lastRisingEdge = 0;
+volatile unsigned long period = 0;
+
+// Desired on and off times in milliseconds
+unsigned long desiredOnTime = 10;
+unsigned long desiredOffTime = 10;
+
+// Pin assignments
+const int inputPin = 2;  // Pin to read the incoming frequency
+const int outputPin = 13; // Pin to output the on/off signal
+
+void setup() {
+  pinMode(inputPin, INPUT);
+  pinMode(outputPin, OUTPUT);
+  
+  // Attach an interrupt to the input pin on the RISING edge
+  attachInterrupt(digitalPinToInterrupt(inputPin), onRisingEdge, RISING);
+}
+
+void loop() {
+  unsigned long currentPeriod;
+
+  // Safely read the shared 'period' variable
+  noInterrupts();
+  currentPeriod = period;
+  interrupts();
+
+  // Check if a period has been measured
+  if (currentPeriod > 0) {
+    // Turn the output pin on
+    digitalWrite(outputPin, HIGH);
+    delay(140); // 140ms (needs to be >70)
+
+    // Turn the output pin off
+    digitalWrite(outputPin, LOW);
+    delay(800); // 800ms (needs to be >400)
+  }
+}
+
+void onRisingEdge() {
+  unsigned long currentRisingEdge = micros();
+  period = currentRisingEdge - lastRisingEdge;
+  lastRisingEdge = currentRisingEdge;
+}
