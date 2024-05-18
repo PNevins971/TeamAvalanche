@@ -1715,7 +1715,7 @@
   (symbol (lib_id "Device:LED") (at 146.05 72.39 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 151e278f-f583-4a3e-a473-b695153a523f)
-    (property "Reference" "D5" (at 149.86 69.85 0)
+    (property "Reference" "TRANSMITTING" (at 149.86 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GREEN_LED" (at 146.05 69.85 0)
@@ -1732,7 +1732,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "D5") (unit 1)
+          (reference "TRANSMITTING") (unit 1)
         )
       )
     )
@@ -1741,7 +1741,7 @@
   (symbol (lib_id "Device:LED") (at 176.53 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1dc47c5d-40f8-4b23-8185-53b822e11a19)
-    (property "Reference" "D2" (at 180.34 49.53 0)
+    (property "Reference" "50%" (at 180.34 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RED_LED_50" (at 176.53 49.53 0)
@@ -1758,7 +1758,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "D2") (unit 1)
+          (reference "50%") (unit 1)
         )
       )
     )
@@ -2145,7 +2145,7 @@
   (symbol (lib_id "Device:LED") (at 176.53 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8c88dc1e-30bc-45fc-baa0-d3d2947eeafc)
-    (property "Reference" "D3" (at 180.34 57.15 0)
+    (property "Reference" "75%" (at 180.34 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RED_LED_75" (at 176.53 57.15 0)
@@ -2162,7 +2162,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "D3") (unit 1)
+          (reference "75%") (unit 1)
         )
       )
     )
@@ -2286,7 +2286,7 @@
   (symbol (lib_id "Device:LED") (at 176.53 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ac636dbd-1878-4b01-8c07-8e55e1eb8966)
-    (property "Reference" "D4" (at 180.34 63.5 0)
+    (property "Reference" "100%" (at 180.34 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RED_LED_100" (at 176.53 63.5 0)
@@ -2303,7 +2303,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "D4") (unit 1)
+          (reference "100%") (unit 1)
         )
       )
     )
