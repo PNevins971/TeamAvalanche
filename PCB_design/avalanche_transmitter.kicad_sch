@@ -1801,7 +1801,7 @@
   (symbol (lib_id "Switch:SW_SPDT") (at 120.65 80.01 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 07204bd5-a827-46a4-8ac8-95aa3193f02f)
-    (property "Reference" "SW2" (at 120.65 72.39 0)
+    (property "Reference" "On/Off" (at 120.65 72.39 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SW_SPDT" (at 120.65 74.93 0)
@@ -1819,7 +1819,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "SW2") (unit 1)
+          (reference "On/Off") (unit 1)
         )
       )
     )
@@ -1878,7 +1878,7 @@
   (symbol (lib_id "Device:LED") (at 146.05 72.39 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 151e278f-f583-4a3e-a473-b695153a523f)
-    (property "Reference" "TRANSMITTING1" (at 149.86 69.85 0)
+    (property "Reference" "TRANSMITTING" (at 149.86 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GREEN_LED" (at 146.05 69.85 0)
@@ -1895,7 +1895,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "TRANSMITTING1") (unit 1)
+          (reference "TRANSMITTING") (unit 1)
         )
       )
     )
@@ -1904,10 +1904,10 @@
   (symbol (lib_id "Device:LED") (at 176.53 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1dc47c5d-40f8-4b23-8185-53b822e11a19)
-    (property "Reference" "50%1" (at 180.34 49.53 0)
+    (property "Reference" "75%" (at 180.34 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "RED_LED_50" (at 176.53 49.53 0)
+    (property "Value" "RED_LED" (at 176.53 49.53 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "LED_THT:LED_D5.0mm" (at 176.53 55.88 0)
@@ -1921,7 +1921,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "50%1") (unit 1)
+          (reference "75%") (unit 1)
         )
       )
     )
@@ -2142,7 +2142,7 @@
   (symbol (lib_id "Device:C") (at 100.965 29.845 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4cdaccea-1d32-4952-9438-823204dd9076)
-    (property "Reference" "C3" (at 104.14 28.575 0)
+    (property "Reference" "C1" (at 104.14 28.575 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C" (at 104.14 31.115 0)
@@ -2159,7 +2159,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "C3") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -2410,7 +2410,7 @@
   (symbol (lib_id "Device:LED") (at 176.53 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8c88dc1e-30bc-45fc-baa0-d3d2947eeafc)
-    (property "Reference" "75%1" (at 180.34 57.15 0)
+    (property "Reference" "50%" (at 180.34 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RED_LED_75" (at 176.53 57.15 0)
@@ -2427,7 +2427,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "75%1") (unit 1)
+          (reference "50%") (unit 1)
         )
       )
     )
@@ -2551,7 +2551,7 @@
   (symbol (lib_id "Device:LED") (at 176.53 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ac636dbd-1878-4b01-8c07-8e55e1eb8966)
-    (property "Reference" "100%1" (at 180.34 63.5 0)
+    (property "Reference" "25%" (at 180.34 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RED_LED_100" (at 176.53 63.5 0)
@@ -2568,7 +2568,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "100%1") (unit 1)
+          (reference "25%") (unit 1)
         )
       )
     )
@@ -2602,7 +2602,7 @@
   (symbol (lib_id "Device:LED") (at 176.53 44.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bc7eb596-24c4-4fe1-88ba-6e3851b6d369)
-    (property "Reference" "D1" (at 180.34 41.91 0)
+    (property "Reference" "100%" (at 180.34 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "RED_LED_25" (at 176.53 41.91 0)
@@ -2619,7 +2619,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "D1") (unit 1)
+          (reference "100%") (unit 1)
         )
       )
     )
@@ -2628,7 +2628,7 @@
   (symbol (lib_id "Device:C_Variable") (at 83.82 29.845 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c52cb9ac-51de-4f60-a185-c16507040383)
-    (property "Reference" "C2" (at 87.63 28.575 0)
+    (property "Reference" "CV1" (at 87.63 28.575 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "C_Variable" (at 87.63 31.115 0)
@@ -2645,7 +2645,7 @@
     (instances
       (project "avalanche_transmitter"
         (path "/8c884e5d-9429-461a-a115-9f5a3e16f11a"
-          (reference "C2") (unit 1)
+          (reference "CV1") (unit 1)
         )
       )
     )
@@ -2657,7 +2657,7 @@
     (property "Reference" "AE1" (at 70.485 20.955 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Antenna_Loop" (at 70.485 23.495 90)
+    (property "Value" "ANT_IN" (at 70.485 23.495 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 70.485 31.115 0)
